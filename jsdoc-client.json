@@ -1,0 +1,31 @@
+{
+  "tags": {
+    "allowUnknownTags": true
+  },
+  "source": {
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "opts": {
+    "destination": "./docs/client"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "outputSourceFiles": false,
+    "outputSourcePath": false,
+    "path": "ink-docstrap",
+    "theme": "united",
+    "navType": "vertical",
+    "linenums": true,
+    "dateFormat": "MMMM Do YYYY, h:mm:ss a",
+    "analytics": { "ua": "UA-89223508-1", "domain":"developers.sketchpad.pro/docs/server"},
+    "footer": "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><!-- developers.sketchpad.pro-docs --><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-6488371769988503\" data-ad-slot=\"6406394519\" data-ad-format=\"auto\"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>",
+    "copyright": "<hr><br/><br/><a href='http://developers.sketchpad.pro'>sketchpad.pro - drawing board</a> by <a href='http://positivestudio.co'>positivestudio.co</a><br/><br/>",
+    "collapseSymbols": false,
+    "inverseNav": false,
+    "sort": false
+  }
+}

@@ -1,0 +1,84 @@
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+/*.navbar-custom {
+	line-height: 2em;
+}
+.navbar-custom li {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+*/
+.logo {
+    padding-right: 2em;
+    vertical-align: super;
+}
+.logo small {
+    position: absolute;
+    left: 57px;
+    font-size: 12px;
+    top: 32px;
+    opacity: .2;
+
+}
+.logo-text {
+	font-family: 'Geostar Fill', cursive;
+	color: #888;
+}
+
+/*.logo-text .logo-1 {
+	color: hsla(30, 100%, 50%, 1);
+}
+.logo-text .logo-2 {
+	color: hsla(10, 100%, 50%, 1);
+}
+.logo-text .logo-3 {
+	color: hsla(245, 100%, 50%, 1);
+}
+.logo-text .logo-4 {
+	color: hsla(225, 100%, 50%, 1);
+}
+.logo-text .logo-5 {
+	color: hsla(205, 100%, 50%, 1);
+}
+.logo-text .logo-6 {
+	color: hsla(185, 100%, 50%, 1);
+}
+.logo-text .logo-7 {
+	color: hsla(155, 100%, 50%, 1);
+}
+.logo-text .logo-8 {
+	color: hsla(135, 100%, 50%, 1);
+}
+.logo-text .logo-9 {
+	color: hsla(110, 100%, 50%, 1);
+}
+.logo-text .logo-10 {
+	color: hsla(0, 0%, 50%, 1);
+}
+.logo-text .logo-11 {
+	color: hsla(0, 0%, 50%, 1);
+}
+.logo-text .logo-12 {
+	color: hsla(0, 0%, 50%, 1);
+}
+.logo-text .logo-13 {
+	color: hsla(0, 0%, 50%, 1);
+}
+
+*/
+.logo-pro {
+	/*color: #666;*/
+}
+pre.terminal {
+	background-color: #000;
+	color: #eee;
+	padding-left: 1em;
+    padding-right: 1em;
+}
+
+.font-weight-lighter {
+	font-weight: lighter;
+}
+

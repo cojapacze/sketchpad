@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="online drawing sketchpad board library">
+      <meta name="keywords" content="Drawing board sketch pad online">
+      <meta name="author" content="Positive Studio">
+      <link rel="icon" href="favicon.ico">
+
+      <title>sketchpad.pro - free online drawing sketchbook board - Draw on picture - picture.html</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Font Awesome -->
+      <script src="https://use.fontawesome.com/46af14eb3c.js"></script>
+
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Geostar+Fill" rel="stylesheet">
+
+      <!-- Custom CSS -->
+      <link href="css/all.css" rel="stylesheet">
+      <link href="css/picture.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
+      <a class="navbar-brand" href="index.html"><span class="logo">sketchpad.pro<small>for developers</small></span></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fa fa-floppy-o" aria-hidden="true"></i> Install</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="simple.html"><i class="fa fa-television" aria-hidden="true"></i> Demos <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="custom-tools.html"><i class="fa fa-plug" aria-hidden="true"></i> Tool plugins</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/cojapacze/sketchpad"><i class="fa fa-github" aria-hidden="true"></i> Code on GitHub</a></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="bg-faded">
+      <nav class="navbar navbar-toggleable navbar-light">
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="simple.html">Simple</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="advanced.html">Advanced</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="online.html">Online</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="picture.html">Draw on picture <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="autoplay.html">Autoplay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="jquery.html">jQuery</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>Draw on picture</h1>
+        <p class="lead">Try on: <a target="_blank" href="https://codepen.io/positivestudio/pen/vybGoN"><i class="fa fa-codepen"></i> http://codepen.io/positivestudio/pen/vybGoN</a></p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 p-r-0" style="min-width: 200px;">
+          <p>Pen:</p>
+          <div id="colorpalette" class="colorpalette"></div>
+          <hr>
+          Size: <input id="size" type="range" min="0.5" max="100" value="1" step="0.1"/>
+          <hr>
+          <p>
+            Erase:
+            <span id="eraser" class="btn btn-secondary eraser center-block"><i class="fa fa-eraser" aria-hidden="true"></i></span>
+          </p>
+        </div>
+        <div class="col-sm-9 p-l-0 p-r-0">
+          <!-- SketchpadJS container here: -->
+          <div id="sketchpad"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <p></p>
+      </div>
+    </div><!-- /.container -->
+
+    <div class="container mb-3 mt-1">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- developers.sketchpad.pro-bottom -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6488371769988503"
+     data-ad-slot="3048118914"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    </div>
+
+    <div class="bg-inverse text-white mt-3 mb-3 pt-3 pb-3 font-weight-lighter">
+  <div class="container text-left">
+    <div class="row">
+      <div class="col-4">
+        <h4>Sketchpad.pro</h4>
+        <hr class="bg-faded"/>
+        <p>Sketchpad.pro is Open Source and fully customisable drawing library written in JavaScript.</p>
+      </div>
+      <div class="col-4">
+        <h4>Documentation</h4>
+        <hr class="bg-faded"/>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="https://developers.sketchpad.pro/docs/client/sketchpad/0.5.1"><i class="fa fa-desktop" aria-hidden="true"></i> Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developers.sketchpad.pro/docs/server/sketchpad/0.5.1"><i class="fa fa-server" aria-hidden="true"></i> Server</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <h4>Subscribe</h4>
+        <hr class="bg-faded"/>
+        <form method="post" action="https://app.freshmail.com/pl/actions/subscribe/">
+          <input type="hidden" name="subscribers_list_hash" value="lsl8zksfn0" />
+          <input type="text" id="freshmail_email" name="freshmail_email" placeholder="your@email.com" />
+          <input type="submit"/>
+        </form>
+      </div>
+
+    </div>  
+  </div>
+  <div class="container text-center mt-3">
+    <p class="text-right"><a href="#">Back to top <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></a></p>
+    <div class="row">
+      <div class="col-12">Sketchpad.pro &copy; <a href="http://positivestudio.co">positivestudio.co</a> | <a href="https://draw.chat">draw online</a></div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- tether.min.js -->
+    <script src="https://developers.sketchpad.pro/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://v4-alpha.getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    <!-- Sketchpad -->
+    <script src="dist/sketchpad.js"></script>
+    <script src="dist/extra/events.js"></script>
+    <script src="dist/extra/colorpalette.js"></script>
+    <script src="js/picture.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89223508-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

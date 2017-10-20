@@ -1,0 +1,6 @@
+.sketchpad {
+    width: 100%;
+    height: 640px;
+    border:1px solid rgba(128, 128, 128, 1);;
+    background-image: url("../images/bg.png");
+}

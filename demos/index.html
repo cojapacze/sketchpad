@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="online drawing sketchpad board library">
+      <meta name="keywords" content="Drawing board sketch pad online">
+      <meta name="author" content="Positive Studio">
+      <link rel="icon" href="favicon.ico">
+
+      <title>sketchpad.pro - free online drawing sketchbook board - <i class="fa fa-floppy-o" aria-hidden="true"></i> Install - index.html</title>
+
+      <!-- Bootstrap core CSS -->
+      <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <!-- Font Awesome -->
+      <script src="https://use.fontawesome.com/46af14eb3c.js"></script>
+
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Geostar+Fill" rel="stylesheet">
+
+      <!-- Custom CSS -->
+      <link href="css/all.css" rel="stylesheet" />
+      <link href="css/index.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-toggleable-sm navbar-inverse bg-inverse">
+      <a class="navbar-brand" href="index.html"><span class="logo">sketchpad.pro<small>for developers</small></span></a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html"><i class="fa fa-floppy-o" aria-hidden="true"></i> Install <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="simple.html"><i class="fa fa-television" aria-hidden="true"></i> Demos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="custom-tools.html"><i class="fa fa-plug" aria-hidden="true"></i> Tool plugins</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/cojapacze/sketchpad"><i class="fa fa-github" aria-hidden="true"></i> Code on GitHub</a></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container pb-3">
+
+      <div class="starter-template mt-3">
+         <div>
+	<h1 class="logo-text">
+		<span class="logo-1">s</span><!-- 
+		 --><span class="logo-2">k</span><!-- 
+		 --><span class="logo-3">e</span><!-- 
+		 --><span class="logo-4">t</span><!-- 
+		 --><span class="logo-5">c</span><!-- 
+		 --><span class="logo-6">h</span><!-- 
+		 --><span class="logo-7">p</span><!-- 
+		 --><span class="logo-8">a</span><!-- 
+		 --><span class="logo-9">d</span><!-- 
+		 --><span class="logo-pro"><!-- 
+			 --><span class="logo-10">.</span><!-- 
+			 --><span class="logo-11">p</span><!-- 
+			 --><span class="logo-12">r</span><!-- 
+			 --><span class="logo-13">o</span><!-- 
+		 --></span>
+	</h1>
+	<p class="lead">Free drawing</p>
+</div>
+
+      </div>
+      
+      <div class="mb-3">          
+        <p class="text-justify">Sketchpad.pro is a simple graphic editor written for the web. This drawing library uses HTML5 Canvas supported by all modern browsers (Chrome, Firefox, Opera, Internet Explorer...). You can use any device to draw on "sketchpad". Drawn sketches you can export to jpeg/png or save as .json history file.</p>
+        <p class="text-justify">Sketchpad.pro is using "slices of time" as inputs history to store events. This approach allows co-operating multiple users in real-time using WebSocket server.</p>
+        <p>Sketchpad.pro is fully customizable javascript library written in ES5.</p>
+        <p class="text-right"><a href="https://draw.chat">try draw.chat - free chat &amp; drawing board online</a></p>
+        <p class="text-right"><a href="https://sketchpad.pro">try sketchpad.pro - free drawing board online</a></p>
+      </div>
+      <!-- rem:include:.ads-main.html:__ -->
+      <div class="mt-3 mb-3">
+        <h2>Simple using with a CDN</h2>
+        <p>Copy this script and paste into your page to include Sketchpad.pro from CDN server:</p>
+        <pre class="code"><code>
+&lt;script src=&#34;http://cdn.sketchpad.pro/dist/current/sketchpad.min.js&#34;&gt;&lt;/script&gt;
+        </code></pre>
+        <h2>or Build your own Sketchpad.pro</h2>
+          <ol>
+            <li>Download &amp; install current <a href="https://nodejs.org/" target="_blank">Node.js</a>.</li>
+            <li>Download Sketchpad.pro developer pack <a href="https://developers.sketchpad.pro/download/sketchpad-0.9.1-devpack.zip">here</a> and extract ``sketchpad/`` folder -- or clone project from GitHub:
+              <pre class="terminal"><code>
+git clone https://github.com/cojapacze/sketchpad.git
+              </code></pre>
+            </li>
+            <li>Run in terminal:
+              <pre class="terminal"><code>
+cd sketchpad
+npm install
+gulp
+node server/server.js
+              </code></pre>
+            </li>
+            <li>Check dist/ folder for your build files.</li>
+            <li>Open test page: demos/online.html to test your build.</li>
+
+            <li>Use:
+<pre class="terminal"><code>
+gulp watch
+
+</code></pre>
+to watch files for changes during development.
+            </li>
+          </ol>
+      </div>
+    </div>
+
+
+    <div class="bg-inverse text-white mt-3 mb-3 pt-3 pb-3 font-weight-lighter">
+  <div class="container text-left">
+    <div class="row">
+      <div class="col-4">
+        <h4>Sketchpad.pro</h4>
+        <hr class="bg-faded"/>
+        <p>Sketchpad.pro is Open Source and fully customisable drawing library written in JavaScript.</p>
+      </div>
+      <div class="col-4">
+        <h4>Documentation</h4>
+        <hr class="bg-faded"/>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="https://developers.sketchpad.pro/docs/client/sketchpad/0.5.1"><i class="fa fa-desktop" aria-hidden="true"></i> Client</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://developers.sketchpad.pro/docs/server/sketchpad/0.5.1"><i class="fa fa-server" aria-hidden="true"></i> Server</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <h4>Subscribe</h4>
+        <hr class="bg-faded"/>
+        <form method="post" action="https://app.freshmail.com/pl/actions/subscribe/">
+          <input type="hidden" name="subscribers_list_hash" value="lsl8zksfn0" />
+          <input type="text" id="freshmail_email" name="freshmail_email" placeholder="your@email.com" />
+          <input type="submit"/>
+        </form>
+      </div>
+
+    </div>  
+  </div>
+  <div class="container text-center mt-3">
+    <p class="text-right"><a href="#">Back to top <i class="fa fa-arrow-circle-o-up" aria-hidden="true"></i></a></p>
+    <div class="row">
+      <div class="col-12">Sketchpad.pro &copy; <a href="http://positivestudio.co">positivestudio.co</a> | <a href="https://draw.chat">draw online</a></div>
+    </div>
+  </div>
+</div>
+
+    <!-- tether.min.js -->
+    <script src="https://developers.sketchpad.pro/js/tether.min.js"></script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://v4-alpha.getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="https://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89223508-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+
+#tools {
+    height: 32px;
+    width: 640px;
+    margin: auto;
+    background-color: #f8f8f8;
+}
+.button {
+    width: 32px;
+    height: 32px;
+    float: left;
+    cursor: pointer;
+    line-height: 32px;
+}
+.rubber .button, .shapes .button, .reset .button {
+    margin-left: 5px;
+    background-color: #eee;
+    text-align: center;
+    margin-right: 5px;
+    /*border: 1px solid #000;*/
+    border-radius: 0;
+}
+
+.pen .button {
+    width: 16px;
+    height: 16px;
+    margin: 8px;
+}
+.pen {
+    display: block;
+}
+.marker {
+    display: block;
+}
+.button {
+    border-radius: 20px;
+}
+
+.pen .k {
+    background-color: rgba(0, 0, 0, 1);
+}
+.pen .g {
+    background-color: rgba(162, 191, 47, 1);
+}
+.pen .b {
+    background-color: rgba(0, 0, 255, 1);
+}
+.pen .r {
+    background-color: rgba(255, 0, 0, 1);
+}
+.pen .y {
+    background-color: rgba(255, 200, 0, 1);
+}
+
+
+.marker .k {
+    background-color: rgba(128, 128, 128, 1);
+}
+.marker .g {
+    background-color: rgba(180, 205, 88, 1);
+}
+.marker .b {
+    background-color: rgba(128, 128, 255, 1);
+}
+.marker .r {
+    background-color: rgba(255, 128, 128, 1);
+}
+.marker .y {
+    background-color: rgba(250, 179, 73, 1);
+}

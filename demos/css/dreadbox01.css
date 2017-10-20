@@ -1,0 +1,12 @@
+#sketchpad {
+    right: 0;
+    width: 1000px;
+    height: 1489px;
+}
+
+#pixelpicker {
+    position: absolute;
+    top: 252px;
+    left: 720px;
+    cursor:pointer;
+}
