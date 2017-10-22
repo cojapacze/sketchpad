@@ -52,7 +52,7 @@ https://developers.sketchpad.pro/advanced.html
 ## Documentation
 
 The full documentation is available online at the following address:
-http://developers.sketchpad.pro/documentation.html
+https://developers.sketchpad.pro/documentation.html
 
 ## Checking Your Installation
 
