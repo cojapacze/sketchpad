@@ -1,7 +1,7 @@
 {
   "name": "sketchpad-agpl",
   "version": "0.5.1",
-  "description": "Sketchpad.pro is a simple graphic editor written for web. This drawing plugin uses HTML5 Canvas supported by all modern browsers. You can use multi touch devices to draw on \"sketchpad\". Drawen sketches you can export to jepg/png or save as .json history file.",
+  "description": "Sketchpad.pro is a simple graphics editor written for the web. This draw plugin uses HTML5 Canvas supported by all modern browsers. You can use multi-touch devices to draw on \"sketchpad\". Drawn sketches you can export to jepg/png or save as .json history file.",
   "main": "server",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

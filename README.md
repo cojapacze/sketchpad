@@ -10,11 +10,11 @@ Sketchpad Pro is fully customisable javascript library written in ES5.
 Using Sketchpad Pro with a CDN
 Copy this script and paste into your page to include Sketchpad Pro from CDN server:
 ```
-<script src="http://cdn.sketchpad.pro/dist/current/sketchpad.min.js"></script>
+<script src="https://cdn.sketchpad.pro/dist/current/sketchpad.min.js"></script>
 ```
 Build your own Sketchpad Pro
 1. Download & install current Node.js.
-2. Download {@link http://developers.sketchpad.pro Sketchpad Pro developer pack} and extract ``sketchpad/`` folder or clone project from GitHub:
+2. Download {@link https://developers.sketchpad.pro Sketchpad Pro developer pack} and extract ``sketchpad/`` folder or clone project from GitHub:
 
 ```
 git clone https://github.com/cojapacze/sketchpad.git
@@ -33,6 +33,7 @@ gulp
 
 5. Run local server
 ```
+cd server
 node server
 ```
 
@@ -43,6 +44,10 @@ gulp watch
 ```
 
 to watch files for changes while development.
+
+## Demos
+
+https://developers.sketchpad.pro/advanced.html
 
 ## Documentation
 

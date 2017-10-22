@@ -5,6 +5,7 @@ function initSketchpad() {
     var sketchpadEl = document.getElementById("sketchpad");
     var sketchpad = new Sketchpad({
         containerEl: sketchpadEl,
+        token: "sketchpad",
         features: {
             displayCrosshair: true,
             displayGrid: true
@@ -240,7 +241,7 @@ function initSketchpad() {
     });
 
     document.getElementById('reset').addEventListener("click", function () {
-        sketchpad.reset();
+        sketchpad.clearSketchpad();
     });
 
     document.getElementById('tool-undo').addEventListener("click", function () {
