@@ -45,7 +45,7 @@ function sendToRobot(nextPos) {
     "use strict";
     // fetch("http://192.168.0.32/forward/" + parseInt(move.distance, 10));
     // var roboAngle = (parseInt(nextPos.angle2, 10));
-    var angleDeg = parseInt(Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180, 10) - nextPos.lastAngle;
+    var angleDeg = parseInt((Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180) - nextPos.lastAngle, 10);
 
     var command = "go/" + angleDeg + "/" + parseInt(nextPos.distance, 10);
     console.log("COMMAND:%c", "color:red", command);
