@@ -1448,6 +1448,7 @@ Object.assign(Sketchpad.prototype, {
      */
     registerTool: function registerTool(toolId, ToolClass, config) {
         "use strict";
+        console.info("registerTool", toolId);
         // fix empty object
         if (typeof config !== "object") {
             config = {};

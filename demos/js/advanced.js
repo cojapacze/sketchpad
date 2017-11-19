@@ -99,8 +99,8 @@ function initSketchpad() {
         }
     }
 
-    selectTool("pen");
-
+    selectTool("robot");
+    window.selectTool = selectTool;
     document.getElementById("size-slider").addEventListener("change", function (e) {
         if (typeof sketchpad.getCurrentTool().setSize === "function") {
             sketchpad.getCurrentTool().setSize(e.target.value);
@@ -213,6 +213,10 @@ function initSketchpad() {
 
     document.getElementById('tool-circle').addEventListener("click", function () {
         selectTool("circle");
+    });
+
+    document.getElementById('tool-robot').addEventListener("click", function () {
+        selectTool("robot");
     });
 
     document.getElementById('tool-rainbow').addEventListener("click", function () {

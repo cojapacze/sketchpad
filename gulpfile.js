@@ -37,8 +37,10 @@ gulp.task("sketchpad-vanilla", function () {
     "use strict";
     return gulp.src([
         //sketchpad lib
+        "client/NSSketchpad-agpl.js",
+        "client/keyshortcuts.js",
         "client/polyfill.js",
-        "client/NSSketchpad.js",
+        "client/resources.js",
         "client/misc.js",
         "client/events.js",
         "client/eventsmanager.js",
@@ -89,8 +91,9 @@ gulp.task("default", function () {
 
 gulp.task("watch", function () {
     "use strict";
-    watch(["README.md", "*.js", "*.json", "client/*.js", "server/*.js"], function () {
-        gulp.start("default");
+    watch(["README.md", "*.js", "*.json", "client/*.js", "server/*.js", "demos/*.js"], function () {
+        // gulp.start("default");
+        gulp.start("sketchpad-vanilla");
     });
 });
 
