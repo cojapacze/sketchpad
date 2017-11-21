@@ -45,9 +45,9 @@ function sendToRobot(nextPos) {
     "use strict";
     // fetch("http://192.168.0.32/forward/" + parseInt(move.distance, 10));
     // var roboAngle = (parseInt(nextPos.angle2, 10));
-    var angleDeg = parseInt((Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180) - nextPos.lastAngle, 10);
+    // var angleDeg = parseInt((Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180) - nextPos.lastAngle, 10);
 
-    var command = "go/" + angleDeg + "/" + parseInt(nextPos.distance, 10);
+    var command = "go/" + parseInt(nextPos.angle, 10) + "/" + parseInt(nextPos.distance, 10);
     console.log("COMMAND:%c", "color:red", command);
     fetch("http://192.168.0.32/" + command).then(function success() {
         console.log("success", command);
@@ -81,6 +81,7 @@ Object.assign(ToolRobot.prototype, {
     lastPosition: {
         x: 0,
         y: 0,
+        absoluteAngle: 180,
         angle: 0
     },
     /**
@@ -208,6 +209,10 @@ Object.assign(ToolRobot.prototype, {
         var sy = firstY;
         var ex = x;
         var ey = y;
+        var dx = ex - sx;
+        var dy = ey - sy;
+        var angle = Math.atan2(dx, dy) * 180 / Math.PI;
+        console.log(angle);
 
         this.connect(input.selectorDiv, sx, sy, ex, ey, this.getSize());
     },
@@ -255,18 +260,19 @@ Object.assign(ToolRobot.prototype, {
             y2 = y,
             sdx = x2 - x1,
             sdy = y2 - y1;
-
-        this.sendRobotCommand({
+        var absoluteAngle = Math.atan2(sdx, sdy) * 180 / Math.PI;
+        var newPosition = {
             lastX: this.lastPosition.x,
             lastY: this.lastPosition.y,
             lastAngle: this.lastPosition.angle,
             x: x,
             y: y,
             distance: this.distance(this.lastPosition.x, this.lastPosition.y, x, y),
-            angle: this.lastPosition.angle - (((Math.atan2((y1 - y2), (x1 - x2)) * (180 / Math.PI)) - 90) % 360),
-            angle2: Math.round(Math.atan2(sdx, sdy) / (Math.PI / 4)) * (Math.PI / 4)
-        });
-
+            absoluteAngle: absoluteAngle,
+            angle: absoluteAngle - this.lastPosition.absoluteAngle
+        };
+        this.sendRobotCommand(newPosition);
+        // this.lastPosition = newPosition;
         sketchpad.containerEl.removeChild(input.selectorDiv);
     },
 
