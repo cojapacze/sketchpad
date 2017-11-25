@@ -41,11 +41,14 @@
 // alert("robot");
 /*global NSSketchpad, Input, Tool*/
 /*global fetch, window*/
+/*global Keyshortcuts*/
 function sendToRobot(nextPos) {
     "use strict";
     // fetch("http://192.168.0.32/forward/" + parseInt(move.distance, 10));
     // var roboAngle = (parseInt(nextPos.angle2, 10));
     // var angleDeg = parseInt((Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180) - nextPos.lastAngle, 10);
+
+    //drawing of the test image - img1
 
     var command = "go/" + parseInt(nextPos.angle, 10) + "/" + parseInt(nextPos.distance, 10);
     console.log("COMMAND:%c", "color:red", command);
@@ -59,7 +62,27 @@ window.sendToRobot = sendToRobot;
 function ToolRobot(config) {
     "use strict";
     Tool.call(this, config);
+    var image = new Image();
+    this.robotImage = image;
+    var that = this;
+    image.onload = function () {
+        that.drawRobot();
+    };
+    var src = "http://localhost/drawbot/demos/images/drawbot.png";
+    image.src = src;
+    console.log("Loading image", image, src);
+
     this.toolId = config.toolId || "line";
+    var keyshortcuts = new Keyshortcuts();
+    keyshortcuts.addShortcut(Object.assign({altKey: false, keyCode: 37, repeatable: true}, config.keyModifiers), function () {//left
+        // e.stopImmediatePropagation();
+        that.fixAbsoluteAngle(that.lastPosition.absoluteAngle + 1);
+    });
+    keyshortcuts.addShortcut(Object.assign({altKey: false, keyCode: 39, repeatable: true}, config.keyModifiers), function () {//right
+        // e.stopImmediatePropagation();
+        that.fixAbsoluteAngle(that.lastPosition.absoluteAngle - 1);
+    });
+    that.keyshortcuts = keyshortcuts;
     // console.log("new rect", this);
 }
 
@@ -195,26 +218,22 @@ Object.assign(ToolRobot.prototype, {
         // console.log("Robot Move", input, x, y);
         var firstX = input.startX;
         var firstY = input.startY;
+        var dx = x - firstX;
+        var dy = y - firstY;
 
         if (e.shiftKey) {
-            var dx = x - firstX;
-            var dy = y - firstY;
             var distance = this.distance(firstX, firstY, x, y);
-            var angle = Math.round(Math.atan2(dx, dy) / (Math.PI / 4)) * (Math.PI / 4);
-            x = firstX + distance * Math.sin(angle);
-            y = firstY + distance * Math.cos(angle);
+            var shiftAngle = Math.round(Math.atan2(dx, dy) / (Math.PI / 4)) * (Math.PI / 4);
+            x = firstX + distance * Math.sin(shiftAngle);
+            y = firstY + distance * Math.cos(shiftAngle);
         }
 
-        var sx = firstX;
-        var sy = firstY;
-        var ex = x;
-        var ey = y;
-        var dx = ex - sx;
-        var dy = ey - sy;
-        var angle = Math.atan2(dx, dy) * 180 / Math.PI;
-        console.log(angle);
+        var absoluteAngle = Math.atan2(dx, dy) * 180 / Math.PI;
+        this.drawRobot(absoluteAngle);
+        // var angle = Math.atan2(dx, dy) * 180 / Math.PI;
+        // console.log(angle);
 
-        this.connect(input.selectorDiv, sx, sy, ex, ey, this.getSize());
+        this.connect(input.selectorDiv, firstX, firstY, x, y, this.getSize());
     },
 
     sendRobotCommand: function sendRobotCommand(move) {
@@ -222,6 +241,7 @@ Object.assign(ToolRobot.prototype, {
         // console.log("MOVE", move);
         sendToRobot(move);
         this.lastPosition = move;
+        this.drawRobot();
     },
     /**
      * [finishInput description]
@@ -276,6 +296,40 @@ Object.assign(ToolRobot.prototype, {
         sketchpad.containerEl.removeChild(input.selectorDiv);
     },
 
+    fixAbsoluteAngle: function (angle) {
+        "use strict";
+        this.lastPosition.absoluteAngle = angle;
+        this.drawRobot();
+    },
+    drawRobot: function drawRobot(setAngle) {
+        "use strict";
+        var sketchpad = this.sketchpad,
+            context = sketchpad.contextProjector2D,
+            angle = this.lastPosition.absoluteAngle;
+
+        // console.log("Draw ROBOT", this.robotImage, "on contect", context);
+        context.setTransform(1, 0, 0, 1, 0, 0);
+        context.translate(this.sketchpad.width - 64, 64);
+        context.rotate(-angle * Math.PI / 180);
+        context.beginPath();
+        context.arc(0, 0, 48, 0, 2 * Math.PI, false);
+        context.fillStyle = (setAngle === undefined)
+            ? '#ffffff'
+            : '#ffeeee';
+        context.fill();
+        // context.fillStyle = 'green';
+        // context.fillRect(-32, -32, 64, 64);
+
+        context.drawImage(this.robotImage, 0, 0, this.robotImage.width, this.robotImage.height, -32, -32, 64, 64);
+        if (setAngle) {
+            context.setTransform(1, 0, 0, 1, 0, 0);
+            context.translate(this.sketchpad.width - 64, 64);
+            context.rotate(-setAngle * Math.PI / 180);
+            context.globalAlpha = 0.8;
+            context.drawImage(this.robotImage, 0, 0, this.robotImage.width, this.robotImage.height, -32, -32, 64, 64);
+            context.globalAlpha = 1;
+        }
+    },
     /**
      * Draw engine
      * @memberof ToolRobot#
