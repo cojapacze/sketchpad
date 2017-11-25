@@ -1,6 +1,6 @@
 // @license magnet:?xt=urn:btih:0b31508aeb0634b347b8270c7bee4d411b5d4109&dn=agpl-3.0.txt AGPL-3 https://www.gnu.org/licenses/agpl-3.0-standalone.html
 /**
- * @source: http://developers.sketchpad.pro/dist/src/sketchpad.tool.line.js
+ * @source: http://developers.sketchpad.pro/dist/src/sketchpad.tool.robot.js
  *
  * Sketchpad.pro
  * {@link http://sketchpad.pro|Sketchpad.pro - drawing board sketch free}
@@ -44,13 +44,8 @@
 /*global Keyshortcuts*/
 function sendToRobot(nextPos) {
     "use strict";
-    // fetch("http://192.168.0.32/forward/" + parseInt(move.distance, 10));
-    // var roboAngle = (parseInt(nextPos.angle2, 10));
-    // var angleDeg = parseInt((Math.atan2(nextPos.y - nextPos.lastY, nextPos.x - nextPos.lastX) * 180 / Math.PI + 180) - nextPos.lastAngle, 10);
 
-    //drawing of the test image - img1
-
-    var command = "go/" + parseInt(nextPos.angle, 10) + "/" + parseInt(nextPos.distance, 10);
+    var command = "go/" + parseInt(nextPos.angleDelta, 10) + "/" + parseInt(nextPos.distance, 10);
     console.log("COMMAND:%c", "color:red", command);
     fetch("http://192.168.0.32/" + command).then(function success() {
         console.log("success", command);
@@ -58,6 +53,7 @@ function sendToRobot(nextPos) {
         console.error("ignore:error", command);
     });
 }
+
 window.sendToRobot = sendToRobot;
 function ToolRobot(config) {
     "use strict";
@@ -104,7 +100,7 @@ Object.assign(ToolRobot.prototype, {
     lastPosition: {
         x: 0,
         y: 0,
-        absoluteAngle: 180,
+        absoluteAngle: 0,
         angle: 0
     },
     /**
@@ -263,36 +259,39 @@ Object.assign(ToolRobot.prototype, {
         // console.log("Robot End", input, x, y);
         var firstX = input.startX;
         var firstY = input.startY;
+        var dx = x - firstX;
+        var dy = y - firstY;
 
         if (e.shiftKey) {
-            var dx = x - firstX;
-            var dy = y - firstY;
             var distance = this.distance(firstX, firstY, x, y);
             var angle = Math.round(Math.atan2(dx, dy) / (Math.PI / 4)) * (Math.PI / 4);
             x = firstX + distance * Math.sin(angle);
             y = firstY + distance * Math.cos(angle);
         }
+        dx = x - firstX;
+        dy = y - firstY;
 
         input.addPoint(new Date().getTime(), x, y);
-        var x1 = this.lastPosition.x,
-            y1 = this.lastPosition.y,
-            x2 = x,
-            y2 = y,
-            sdx = x2 - x1,
-            sdy = y2 - y1;
-        var absoluteAngle = Math.atan2(sdx, sdy) * 180 / Math.PI;
+
+        var absoluteAngle = Math.atan2(dx, dy) * 180 / Math.PI;
+
         var newPosition = {
             lastX: this.lastPosition.x,
             lastY: this.lastPosition.y,
-            lastAngle: this.lastPosition.angle,
             x: x,
             y: y,
             distance: this.distance(this.lastPosition.x, this.lastPosition.y, x, y),
             absoluteAngle: absoluteAngle,
-            angle: absoluteAngle - this.lastPosition.absoluteAngle
+            angleDelta: this.lastPosition.absoluteAngle - absoluteAngle // robot change
         };
+        if (newPosition.angleDelta < -180) {
+            newPosition.angleDelta = 360 + newPosition.angleDelta;
+        }
+        if (newPosition.angleDelta > 180) {
+            newPosition.angleDelta = newPosition.angleDelta - 360;
+        }
+
         this.sendRobotCommand(newPosition);
-        // this.lastPosition = newPosition;
         sketchpad.containerEl.removeChild(input.selectorDiv);
     },
 
