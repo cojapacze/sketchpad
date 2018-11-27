@@ -49,6 +49,10 @@ to watch files for changes while development.
 
 https://developers.sketchpad.pro/advanced.html
 
+## Docker
+
+Dockerfile and docker-compose are available in the Docker directory of the project.
+
 ## Documentation
 
 The full documentation is available online at the following address:
