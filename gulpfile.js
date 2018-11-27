@@ -13,6 +13,7 @@ gulp.task("clean", function () {
     "use strict";
     gulp.src([
         "dist",
+        "demos/dist",
         "docs"
     ], {read: false})
         .pipe(clean());
@@ -36,29 +37,37 @@ gulp.task("doc-server", function (cb) {
 gulp.task("sketchpad-vanilla", function () {
     "use strict";
     return gulp.src([
-        //sketchpad lib
-        "client/polyfill.js",
-        "client/NSSketchpad.js",
-        "client/misc.js",
+        "client/colorpalette.js",
         "client/events.js",
         "client/eventsmanager.js",
-        "client/colorpalette.js",
+        "client/fontpalette.js",
+        "client/formpalette.js",
+        "client/imagehost.js",
+        "client/keyshortcuts.js",
+        "client/misc.js",
+        "client/NSSketchpad-agpl.js",
         "client/pixelpicker.js",
-        "client/sketchpad.sketch.js",
-        "client/sketchpad.room.js",
+        "client/polyfill.js",
+        "client/progressbar.js",
+        "client/resources.js",
         "client/sketchpad.input.js",
+        "client/sketchpad.js",
+        "client/sketchpad.room.js",
+        "client/sketchpad.sketch.js",
         "client/sketchpad.tool.js",
         "client/sketchpad.tool.*.js",
-        "client/sketchpad.js"
+        "client/thickness.js",
     ])
         .pipe(concat("sketchpad.js"))
         .pipe(gulp.dest("dist/"))
+        .pipe(gulp.dest("demos/dist/"))
         .pipe(uglify())
         .pipe(header("/*sketchpad.pro - free online drawing*/"))
         .pipe(rename({
             suffix: ".min"
         }))
-        .pipe(gulp.dest("dist/"));
+        .pipe(gulp.dest("dist/"))
+        .pipe(gulp.dest("demos/dist/"));
 });
 
 gulp.task("sketchpad-jquery", ["sketchpad-vanilla"], function () {
@@ -76,7 +85,8 @@ gulp.task("sketchpad-jquery", ["sketchpad-vanilla"], function () {
         .pipe(rename({
             suffix: ".min"
         }))
-        .pipe(gulp.dest("dist/"));
+        .pipe(gulp.dest("dist/"))
+        .pipe(gulp.dest("demos/dist/"));
 });
 
 // define tasks here
