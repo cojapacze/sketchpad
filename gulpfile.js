@@ -60,14 +60,14 @@ gulp.task("sketchpad-vanilla", function () {
     ])
         .pipe(concat("sketchpad.js"))
         .pipe(gulp.dest("dist/"))
-        .pipe(gulp.dest("demos/dist/"))
+        .pipe(gulp.dest("demos/libs/"))
         .pipe(uglify())
         .pipe(header("/*sketchpad.pro - free online drawing*/"))
         .pipe(rename({
             suffix: ".min"
         }))
         .pipe(gulp.dest("dist/"))
-        .pipe(gulp.dest("demos/dist/"));
+        .pipe(gulp.dest("demos/libs/"));
 });
 
 gulp.task("sketchpad-jquery", ["sketchpad-vanilla"], function () {
@@ -86,7 +86,7 @@ gulp.task("sketchpad-jquery", ["sketchpad-vanilla"], function () {
             suffix: ".min"
         }))
         .pipe(gulp.dest("dist/"))
-        .pipe(gulp.dest("demos/dist/"));
+        .pipe(gulp.dest("demos/libs/"));
 });
 
 // define tasks here
