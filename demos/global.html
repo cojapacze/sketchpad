@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="favicon.ico">
+
+	<title>Draw together</title>
+
+	<!-- Dependencies -->
+	<link href="libs/bootstrap.min.css" rel="stylesheet">
+	<link href="libs/fontawesome.min.css" rel="stylesheet">
+
+	<!-- Custom -->
+	<link href="css/global.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="sidebar shadow-sm">
+				<div class="company-logo">
+					<img src="images/logo.png" alt="Logo of the company" />
+				</div>
+				<ul class="file">
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-folder-open"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-trash-alt"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-save"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-camera"></i>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="move">
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-sync"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-home"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-search-minus"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-search-plus"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-arrows-alt"></i>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="history">
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-undo"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-redo"></i>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="draw">
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-pen"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-paint-brush"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="far fa-square"></i>
+							</div>
+							<div class="col">
+								<i class="far fa-circle"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-slash"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-font"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-magic"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-star-of-life"></i>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="row">
+							<div class="col">
+								<i class="fas fa-eraser"></i>
+							</div>
+							<div class="col">
+								<i class="fas fa-cut"></i>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="color-squares">
+					<div id="color"></div>
+					<div id="fill-color"></div>
+					<div id="switch-color"><i class="fas fa-retweet"></i></div>
+				</div>
+			</nav>
+		</div>
+
+		<div id="sketchpad"></div>
+
+	</div>
+
+	<script src="libs/jquery.min.js"></script>
+	<script src="libs/bootstrap.min.js"></script>
+	<script src="libs/fontawesome.min.js"></script>
+
+	<script src="libs/sketchpad.min.js"></script>
+
+	<script src="js/global.js"></script>
+</body>
+
+</html>

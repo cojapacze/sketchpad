@@ -13,7 +13,7 @@ gulp.task("clean", function () {
     "use strict";
     gulp.src([
         "dist",
-        "demos/dist",
+        "demos/libs",
         "docs"
     ], {read: false})
         .pipe(clean());
@@ -89,11 +89,79 @@ gulp.task("sketchpad-jquery", ["sketchpad-vanilla"], function () {
         .pipe(gulp.dest("demos/libs/"));
 });
 
+// Manage CSS dependencies
+gulp.task("dependencies-css-bootstrap", function () {
+    "use strict";
+    return gulp.src([
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css.map",
+    ])
+        .pipe(gulp.dest("demos/libs/"));
+});
+
+gulp.task("dependencies-css-fontawesome", function () {
+    "use strict";
+    return gulp.src("node_modules/@fortawesome/fontawesome-free/css/all.min.css")
+        .pipe(rename('fontawesome.min.css'))
+        .pipe(gulp.dest("demos/libs/"));
+});
+
+gulp.task("dependencies-css", function () {
+    "use strict";
+    return gulp.start("dependencies-css-bootstrap", "dependencies-css-fontawesome");
+});
+
+// Manage Font Dependencies
+gulp.task("dependencies-font-fontawesome", function () {
+    "use strict";
+    return gulp.src("node_modules/@fortawesome/fontawesome-free/webfonts/*")
+        .pipe(gulp.dest("demos/webfonts/"));
+});
+
+gulp.task("dependencies-font", function () {
+    return gulp.start("dependencies-font-fontawesome");
+});
+
+// Manage JS Dependencies
+gulp.task("dependencies-js-fontawesome", function () {
+    "use strict";
+    return gulp.src([
+        "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+    ])
+        .pipe(rename('fontawesome.min.js'))
+        .pipe(gulp.dest("demos/libs/"));
+});
+
+gulp.task("dependencies-js-bootstrap", function () {
+    "use strict";
+    return gulp.src([
+        "node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "node_modules/bootstrap/dist/js/bootstrap.min.js.map",
+        "node_modules/popper.js/dist/popper.min.js",
+        "node_modules/popper.js/dist/popper.min.js.map",
+    ])
+        .pipe(gulp.dest("demos/libs/"));
+});
+
+gulp.task("dependencies-js-jquery", function () {
+    "use strict";
+    return gulp.src([
+        "node_modules/jquery/dist/jquery.min.js",
+        "node_modules/jquery/dist/jquery.min.map"
+    ])
+        .pipe(gulp.dest("demos/libs/"));
+});
+
+gulp.task("dependencies-js", function () {
+    return gulp.start("dependencies-js-bootstrap", "dependencies-js-jquery", "dependencies-js-fontawesome");
+});
+
+
 // define tasks here
 gulp.task("default", function () {
     "use strict";
     console.log("Building", packageJson.name, packageJson.version);
-    gulp.start("doc-client", "doc-server", "sketchpad-vanilla", "sketchpad-jquery");
+    gulp.start("doc-client", "doc-server", "sketchpad-vanilla", "sketchpad-jquery", "dependencies-css", "dependencies-font", "dependencies-js");
 });
 
 
