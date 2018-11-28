@@ -12,7 +12,7 @@
 .sidebar {
   z-index: 1000;
   position: fixed;
-  width: 70px;
+  width: 80px;
   height: 100%;
   overflow-y: auto;
   background: #d9d9d9;
@@ -53,32 +53,32 @@
 
 .sidebar > .color-squares > #color {
     position: absolute;
-    left: 10px;
+    left: 15px;
     background-color: black;
     border: 1px solid #b3b3b3;
     width: 35px;
     height: 30px;
     z-index: 20;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .sidebar > .color-squares > #fill-color {
     position: absolute;
-    left: 25px;
+    left: 30px;
     margin-top: 15px;
     background-color: white;
     border: 1px solid #b3b3b3;
     width: 35px;
     height: 30px;
     z-index: 10;
+    cursor: pointer;
 }
 
 .sidebar > .color-squares > #switch-color {
     position: absolute;
-    left: 48px;
+    left: 53px;
     font-size: 11px;
-    width: 35px;
-    height: 30px;
-    z-index: 10;
 }
 
 #sketchpad {
