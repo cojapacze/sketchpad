@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  sketchpad-client:
+    build:
+      context: client
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+    - "sketchpad-server"
+    ports:
+    - "80:80"
+
+  sketchpad-server:
+    build:
+      context: server
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+    - "8067:8067"
+

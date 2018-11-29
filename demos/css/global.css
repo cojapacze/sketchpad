@@ -1,0 +1,100 @@
+.company-logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.company-logo > img {
+    width: 30px;
+    display: block;
+    margin: auto;
+}
+
+.sidebar {
+  z-index: 1000;
+  position: fixed;
+  width: 80px;
+  height: 100%;
+  overflow-y: auto;
+  background: #d9d9d9;
+}
+
+.sidebar > .section-title {
+    text-align: center;
+}
+
+.sidebar > ul {
+    border-top: 1px solid black;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sidebar > ul > li > .row {
+    padding: 0px;
+    margin: 0px;
+}
+
+.sidebar > ul > li > .row > .col {
+    font-size: 20px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.sidebar > ul > li:hover {
+    background-color: #f8f8f8;
+}
+
+.sidebar > .color-squares {
+    margin-top: 20px;
+}
+
+.sidebar > .color-squares > #color {
+    position: absolute;
+    left: 15px;
+    background-color: black;
+    border: 1px solid #b3b3b3;
+    width: 35px;
+    height: 30px;
+    z-index: 20;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.sidebar > .color-squares > #fill-color {
+    position: absolute;
+    left: 30px;
+    margin-top: 15px;
+    background-color: white;
+    border: 1px solid #b3b3b3;
+    width: 35px;
+    height: 30px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.sidebar > .color-squares > #switch-color {
+    position: absolute;
+    left: 53px;
+    font-size: 11px;
+}
+
+#sketchpad {
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-repeat: repeat;
+}
+
+.crosshair {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -16px;
+  margin-top: -16px;
+  width: 32px;
+  height: 32px;
+  background-image: url(images/crosshair.png);
+}

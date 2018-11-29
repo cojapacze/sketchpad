@@ -1911,6 +1911,26 @@ Object.assign(Sketchpad.prototype, {
             that.endPath(e, 0, p.x, p.y);
         }, false);
 
+
+        drawObj.addEventListener("mouseleave", function mouseleave(e) {
+            if (that.inputEventsDisabled || !that.mouseLB) {
+                return false;
+            }
+            e.preventDefault();
+            that.mouseLB = false;
+            var p = that.mainPos(e.clientX, e.clientY);
+            that.endPath(e, 0, p.x, p.y);
+        }, false);
+
+        drawObj.addEventListener("contextmenu", function contextmenu(e) {
+            if (that.inputEventsDisabled || !that.mouseLB) {
+                return false;
+            }
+            that.mouseLB = false;
+            var p = that.mainPos(e.clientX, e.clientY);
+            that.endPath(e, 0, p.x, p.y);
+        }, false);
+
         /**
          * Touch support
          */
