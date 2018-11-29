@@ -37,9 +37,9 @@ gulp.task("doc-server", function (cb) {
 gulp.task("sketchpad-vanilla", function () {
     "use strict";
     return gulp.src([
+        "client/_eventsmanager.js",
         "client/colorpalette.js",
         "client/events.js",
-        "client/eventsmanager.js",
         "client/fontpalette.js",
         "client/formpalette.js",
         "client/imagehost.js",
@@ -56,7 +56,7 @@ gulp.task("sketchpad-vanilla", function () {
         "client/sketchpad.sketch.js",
         "client/sketchpad.tool.js",
         "client/sketchpad.tool.*.js",
-        "client/thickness.js",
+        "client/thickness.js"
     ])
         .pipe(concat("sketchpad.js"))
         .pipe(gulp.dest("dist/"))
@@ -94,7 +94,7 @@ gulp.task("dependencies-css-bootstrap", function () {
     "use strict";
     return gulp.src([
         "node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "node_modules/bootstrap/dist/css/bootstrap.min.css.map",
+        "node_modules/bootstrap/dist/css/bootstrap.min.css.map"
     ])
         .pipe(gulp.dest("demos/libs/"));
 });
@@ -119,6 +119,7 @@ gulp.task("dependencies-font-fontawesome", function () {
 });
 
 gulp.task("dependencies-font", function () {
+    "use strict";
     return gulp.start("dependencies-font-fontawesome");
 });
 
@@ -126,7 +127,7 @@ gulp.task("dependencies-font", function () {
 gulp.task("dependencies-js-fontawesome", function () {
     "use strict";
     return gulp.src([
-        "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+        "node_modules/@fortawesome/fontawesome-free/js/all.min.js"
     ])
         .pipe(rename('fontawesome.min.js'))
         .pipe(gulp.dest("demos/libs/"));
@@ -138,7 +139,7 @@ gulp.task("dependencies-js-bootstrap", function () {
         "node_modules/bootstrap/dist/js/bootstrap.min.js",
         "node_modules/bootstrap/dist/js/bootstrap.min.js.map",
         "node_modules/popper.js/dist/popper.min.js",
-        "node_modules/popper.js/dist/popper.min.js.map",
+        "node_modules/popper.js/dist/popper.min.js.map"
     ])
         .pipe(gulp.dest("demos/libs/"));
 });
@@ -153,6 +154,7 @@ gulp.task("dependencies-js-jquery", function () {
 });
 
 gulp.task("dependencies-js", function () {
+    "use strict";
     return gulp.start("dependencies-js-bootstrap", "dependencies-js-jquery", "dependencies-js-fontawesome");
 });
 
