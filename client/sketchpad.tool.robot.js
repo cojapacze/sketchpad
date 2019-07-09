@@ -64,7 +64,7 @@ function ToolRobot(config) {
     image.onload = function () {
         that.drawRobot();
     };
-    var src = "http://localhost/drawbot/demos/images/drawbot.png";
+    var src = "/demos/images/drawbot.png";
     image.src = src;
     console.log("Loading image", image, src);
 
